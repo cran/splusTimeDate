@@ -15,7 +15,8 @@ timeDateOptions(...)
   \item{\dots}{
     you can give a list or vector of character strings as the only
     argument, or you can give any number of arguments in the \code{name=value}
-    form. Optionally, you can give no arguments. See the \bold{Value} and \bold{Side Effects} sections for explanation.
+    form. Optionally, you can give no arguments.
+    See the \bold{Value} and \bold{Side Effects} sections for explanation.
   }
 }
 \section{Common options}{
@@ -103,35 +104,45 @@ follows. Options that have never been set have the value \code{NULL}
  }
  }
 \value{
-Always returns a list, even if the list is of length 1.
+a list, even if the list is of length 1.
 \itemize{
-\item If no arguments are given, \code{timeDateOptions} returns a list of current values for all options.
-\item If a character vector is given as the only argument, \code{timeDateOptions} returns a list of current values for the options named in the character vector.
-\item If an object of mode \code{"list"} is given as the only argument, its components become the values for options with the corresponding names.
-\code{timeDateOptions} returns a list of the option values before they were modified. Usually, the list given as an argument is the return value of a previous call to \code{timeDateOptions}.
-\item If arguments are given in \code{name=value} form, the values of the specified options are changed and \code{timeDateOptions}  returns a list of the 
-option values before they were modified.
+\item If no arguments are given, \code{timeDateOptions} returns
+a list of current values for all options.
+\item If a character vector is given as the only argument,
+\code{timeDateOptions} returns a list of current values for the options
+named in the character vector.
+\item If an object of mode \code{"list"} is given as the only argument,
+its components become the values for options with the corresponding names.
+\code{timeDateOptions} returns a list of the option values
+before they were modified.
+Usually, the list given as an argument is the return value
+of a previous call to \code{timeDateOptions}.
+\item If arguments are given in \code{name=value} form,
+the values of the specified options are changed and \code{timeDateOptions}
+returns a list of the option values before they were modified.
 }
-
 }
 \section{Side Effects}{
-  When options are set, the \code{options} function changes a list named
-  \code{.splusTimeDateOptions} in the \code{splusTimeDate} package.
-The components of \code{.splusTimeDateOptions} are all
-of the currently defined options.
-If \code{timeDateOptions} is called with either a list as the single argument or with one or more arguments in \code{name=value} form, the options specified are changed or created.
+If \code{timeDateOptions} is called with either a list as the single argument
+or with one or more arguments in \code{name=value} form,
+the options specified are changed or created.
+The options are stored in a list in a local environment
+within the \code{splusTimeDate} package.
+Any modifications to the options disappear when the current session ends.
+The next session will start with the default value of the options.
 }
 \details{
-The special options listed in this help file are driven by the object
-\code{.splusTimeDateOptions}.
-The \code{timeDateOptions} function provides the best
-and most convenient way to set and reset the components of this object.
+To see all the \code{timeDate} options and their current values,
+call \code{timeDateOptions} with no arguments i.e. \code{timeDateOptions()}
+
 To set \code{timeDateOptions} temporarily in a function,
 call \code{timeDateOptions} as you normally would from the command line.
-(\strong{Note}: This changes \code{timeDateOptions} on a global level in your session, and not simply in the frame of the function.
-To ensure that your function finishes cleanly and does not produce any side effects, use \code{on.exit} with the return value from your call to \code{timeDateOptions}.)
+To ensure that your function finishes cleanly
+and does not produce any side effects,
+use \code{on.exit} with the return value from
+your call to \code{timeDateOptions}.)
 }
 \examples{
-timeDateOptions(time.zone="GMT")
+timeDateOptions(time.zone="PST")
 }
 \keyword{environment}

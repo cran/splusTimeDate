@@ -84,7 +84,6 @@ export(## generics
        timeZoneR,
        timeZoneList,
        timeDateOptions,
-       .splusTimeDateOptions,
        .time.zone.list,
        timeAlign,
        timeRelative,

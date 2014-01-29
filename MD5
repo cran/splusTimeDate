@@ -1,8 +1,8 @@
-6dd984a82f062d75c5f547e438c48360 *DESCRIPTION
-a213c16377d431f52f86ec01914aa21b *LICENSE
-cbf05b4dfe056bb9b18cb2ccedab808c *NAMESPACE
+539037365710904851c29939ee925f41 *DESCRIPTION
+4900871bac1966efda2958552aa5d505 *LICENSE
+8eaf9fba0b6744f1df8757819ab60732 *NAMESPACE
 ef78422d1cf9bb97b3681832c7128d44 *R/AllClasses.R
-476244c06a250fe03180285cd94b2726 *R/aaa.R
+6549e675111b733467d4227f593573ea *R/aaa.R
 5b14d7268ca7a0ea1cb89a6fc227f5b9 *R/align.R
 af9b096dd4805f868eea5d1a2a22a2f3 *R/event.R
 f4949179ee7a61c6839143fbf34d73f5 *R/form_td.R
@@ -17,7 +17,7 @@ c0c18c1c7df2c3fa26c6e0b3c847cc1e *R/timeDate.R
 d3fd2f3e9c911e17d1372e0c294464fa *R/timeMath.R
 d6d54978d6322b3d3b2c7f177256706a *R/timeSeq.R
 2f4ac0c9d8443004ef03d5de7884b1fb *R/timeSpan.R
-46fb72f04be32a47abf164bf259e16da *R/timeUtils.R
+a5e412866ff692978047cb3843aa3d6e *R/timeUtils.R
 c4599e00330e54ad9a3d8556077db30a *R/timeZone.R
 3fd514719985824066b92c330601192f *R/zzz.R
 30d1799fae0aa115505dd79f3dd99d0c *man/class.GroupVec.Rd
@@ -48,7 +48,7 @@ c02ddf2802f297b655fca6f0262aeb6d *man/hours.Rd
 cbb7d736254242d92792a5f031384b2a *man/is.monthend.Rd
 e2642bcfd9361a75ab7426ae5830c3af *man/mdy.Rd
 35a4e04f1b42c504ff9fefb700e08ffb *man/numseq.Rd
-a4c66d217fcbc41ff11377609c162a44 *man/options.Rd
+133a3e6e8c83a60ddb018bd42631ca23 *man/options.Rd
 6318e36d9aee44586ddf8e80f93cffa8 *man/reltime.Rd
 358f2f9edafbcc5a63d52e7bc3afb00d *man/shiftPositions.Rd
 7324f0c6dddbb9eea2404897bae43df7 *man/timcal.Rd

@@ -3,7 +3,7 @@ function(...) {
   current <- if(exists(".splusTimeDateOptions", envir=.splusTimeDateEnv)) {
       .splusTimeDateEnv$.splusTimeDateOptions
   } else {
-      .splusTimeDateOptions
+      .defaultSplusTimeDateOptions
   }
   if(!nargs()) {
     return(current)
@@ -38,7 +38,7 @@ function(...) {
   if(show) r else invisible(r)
 }
 
-.splusTimeDateOptions <- 
+.defaultSplusTimeDateOptions <- 
   list(ts.eps = 1e-05,
        sequence.tol = 1e-06,
        time.month.name = c("January", "February", "March", "April", "May",
