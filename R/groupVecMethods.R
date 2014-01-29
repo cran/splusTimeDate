@@ -129,7 +129,7 @@ setMethod( "c", signature(x="groupVec"),
         x@columns[[n]] <- c(x@columns[[n]], yn)
       }
       x
-    } 
+    }
   })
 
 setMethod( "is.na", "groupVec",
@@ -301,9 +301,11 @@ setMethod( "summary", "groupVec", function( object, ... )
 })
 
 setMethod( "all.equal.list", "groupVec",
-function (target, current, check.attributes = TRUE, ...) 
+function (target, current, ...)
 {
-    msg <- if (check.attributes) 
+    check.attributes <- list(...)[["check.attributes"]]
+    if (is.null(check.attributes)) check.attributes <- TRUE
+    msg <- if (check.attributes)
         attr.all.equal(target, current, ...)
     iseq <- if (all.equal(names(target), names(current))){
           names(target)
@@ -311,16 +313,16 @@ function (target, current, check.attributes = TRUE, ...)
           if (!is.null(msg)) {
             msg <- msg[-grep("\\bNames\\b", msg)]
             msg <- c(msg, paste("Name mismatch: comparison on intersection of names"))
-          } 
+          }
           intersect(names(target), names(current))
         }
     for (i in iseq) {
-        mi <- all.equal(groupVecColumn(target,i), groupVecColumn(current,i), 
-                        check.attributes = check.attributes, ...)
-        if (is.character(mi)) 
+        mi <- all.equal(groupVecColumn(target,i), groupVecColumn(current,i),
+                         ...)
+        if (is.character(mi))
             msg <- c(msg, paste("Component ", i, ": ", mi, sep = ""))
     }
-    if (is.null(msg)) 
+    if (is.null(msg))
         TRUE
     else msg
 })
