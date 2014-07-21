@@ -1081,11 +1081,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
 
    if( zero_pad )
    {
-#ifdef WIN64 //placeholder
-     num_chars = sprintf( *out_buf, "%0*lld", field_width, print_val );
-#else
      num_chars = sprintf( *out_buf, "%0*d", field_width, print_val );
-#endif //WIN64
      if( num_chars < field_width ) /* problem printing */
        return 0;
      if( num_chars > field_width ) /* field too narrow, put in * characters */
@@ -1098,11 +1094,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
 
    if( field_width > 0 )
    {
-#ifdef WIN64 //placeholder
-     num_chars = sprintf( *out_buf, "%*lld", field_width, print_val );
-#else
      num_chars = sprintf( *out_buf, "%*d", field_width, print_val );
-#endif //WIN64
      if( num_chars < field_width )  /* problem printing */
        return 0;
      if( num_chars > field_width ) /* field too narrow, put in * characters */
@@ -1115,11 +1107,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
 
    /* no particular width */
 
-#ifdef WIN64 //placeholder
-  num_chars = sprintf( *out_buf, "%lld", print_val );
-#else
   num_chars = sprintf( *out_buf, "%d", print_val );
-#endif //WIN64
   if( num_chars < 1 )  /* problem printing */
     return 0;
   *out_buf += num_chars;

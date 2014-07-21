@@ -445,11 +445,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
 
    if( zero_pad )
    {
-#ifdef WIN64 //S7_Change_LONG
-     num_chars = sprintf( *out_buf, "%0*lld", field_width, print_val );
-#else
      num_chars = sprintf( *out_buf, "%0*d", field_width, print_val );
-#endif //WIN64
      if( num_chars != field_width ) 
        return 0;
      *out_buf += num_chars;
@@ -458,11 +454,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
 
    if( field_width > 0 )
    {
-#ifdef WIN64 //S7_Change_LONG
-     num_chars = sprintf( *out_buf, "%*lld", field_width, print_val );
-#else	 
      num_chars = sprintf( *out_buf, "%*d", field_width, print_val );
-#endif //WIN64
      if( num_chars != field_width )
        return 0;
      *out_buf += num_chars;
@@ -470,11 +462,7 @@ static int output_one( char **out_buf, TIME_DATE_STRUCT td,
    }
 
    /* no particular width */
-#ifdef WIN64 //S7_Change_LONG
-  num_chars = sprintf( *out_buf, "%lld", print_val );
-#else
   num_chars = sprintf( *out_buf, "%d", print_val );
-#endif //WIN64
   if( num_chars < 1 )
     return 0;
   *out_buf += num_chars;
@@ -795,11 +783,7 @@ static int input_one( char **input_string, char spec_char, int width,
   tmpchr = *endpos;
   *endpos = '\0';
 
-#ifdef WIN64
-  if( sscanf( inpos, "%lld", &tmplng ) != 1 ) /* this may fail */
-#else
   if( sscanf( inpos, "%d", &tmplng ) != 1 ) /* this may fail */
-#endif
   {
     *endpos = tmpchr;
     return 0;

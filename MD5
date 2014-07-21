@@ -1,4 +1,4 @@
-af5b957db3ce777776eceb29510b6c0e *DESCRIPTION
+f2771d2b0f512b849a5722c66e7497a2 *DESCRIPTION
 4900871bac1966efda2958552aa5d505 *LICENSE
 8eaf9fba0b6744f1df8757819ab60732 *NAMESPACE
 ef78422d1cf9bb97b3681832c7128d44 *R/AllClasses.R
@@ -8,7 +8,7 @@ af9b096dd4805f868eea5d1a2a22a2f3 *R/event.R
 f4949179ee7a61c6839143fbf34d73f5 *R/form_td.R
 89e04dc49ad7debe904d04c166e54da5 *R/form_ts.R
 1b717e4d23902fa0126bb0db12ecd2d3 *R/groupVecFuns.R
-c68f92706d8fc1bccd7c41ce4c0cd0b3 *R/groupVecMethods.R
+64814d309671eb3e7d3a1f678756a4a1 *R/groupVecMethods.R
 a89dd9585b96320a9078052be4d0f54a *R/holidays.R
 b2d430be3868a0d6875550d8c0ce7859 *R/numSeq.R
 2ca322edfd62f9f15c6172e6a33cf8a7 *R/relTime.R
@@ -78,13 +78,13 @@ b878fcd3d5bcb9730d241f356a477c8b *src/relTime.c
 9131e2061202941a889bf032c4e4643e *src/relTime.h
 007b0c68aa9a7ab2a6c657ee68646d53 *src/stMath.c
 9ab3f411ba9d74f28e332c29f611e7f4 *src/stMath.h
-341542e99a9594ada7f3c7e7e08fa4b7 *src/timeFormat.c
+99b6ecd26390ab191f3c4aa86513a616 *src/timeFormat.c
 a6a9d41d81ac3b9c21d8062096922869 *src/timeFormat.h
 b00a7da9e832b4aa5e2324a7fbc816e4 *src/timeFuns.c
 45eaf254520bb5bd9ad371215187ed8c *src/timeFuns.h
 e6d092a0f7a703cbb0491b9796568c9e *src/timeObj.c
 1f326bd8accfdde1406b386de6949fbb *src/timeObj.h
-257e2f9fe7a4b33e4428e1a7d7c4ad6f *src/timeSpanFormat.c
+91c9dd2d7c929e9a25a2f1d9436e7032 *src/timeSpanFormat.c
 c406b538bfd16f225fc51955c8e0339e *src/timeSpanFormat.h
 783841ba2499cbf90ea443a8f4c0a536 *src/timeUtils.c
 044e1695cc8b68b6774942311e164d52 *src/timeUtils.h
