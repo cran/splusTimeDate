@@ -148,7 +148,7 @@ setMethod( "summary", "timeSpan", function( object, ... )
 setMethod( "sort.list", signature( x = "timeSpan" ),
 function( x, partial = NULL,  na.last = TRUE, decreasing = FALSE,
          method = c("shell", "quick", "radix"))
-  sort.list( as( x, "numeric" ), partial, na.last, decreasing, method ))
+  sort.list( as( x, "numeric" ), partial, na.last, decreasing, match.arg(method)))
 
 setMethod( "sort", signature( x = "timeSpan" ),
            function( x, decreasing = FALSE, ...)

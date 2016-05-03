@@ -21,6 +21,7 @@
 # setGeneric("diff", function(x, lag = 1L, differences = 1L, ...) standardGeneric("diff"))
 # }
 
+setGeneric("sort.list", signature="x")
 setGeneric("days" , function(x) standardGeneric("days"))
 setGeneric("years" , function(x) standardGeneric("years"))
 setGeneric("hours" , function(x) standardGeneric("hours"))

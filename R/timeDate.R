@@ -393,7 +393,7 @@ setReplaceMethod( "[",
 setMethod( "sort.list", signature( x = "positionsCalendar" ),
 function( x, partial = NULL,  na.last = TRUE, decreasing = FALSE,
          method = c("shell", "quick", "radix"))
-  sort.list( as( x, "numeric" ), partial, na.last, decreasing, method ))
+  sort.list(as( x, "numeric" ), partial, na.last, decreasing, match.arg(method)))
 
 setMethod( "sort", signature( x = "positionsCalendar" ),  
            function( x, decreasing = FALSE, ...) 

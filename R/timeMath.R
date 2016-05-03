@@ -520,11 +520,11 @@ setMethod( "cut", signature( x = "positionsCalendar" ),
 	      # cut into N equal intervals
         if( length(x)) {
           rng <- range(x, na.rm=TRUE)
-          rng[is.na(rng)] <- timeDate(jul=0)
+          rng[is.na(rng)] <- timeDate(julian=0)
           if( rng[1] == rng[2] ) 
             rng[2] <- rng[2] + timeSpan("1MS" )
           breaks <- timeSeq(from=rng[1], to=rng[2],
-                            length=breaks + 1,
+                            length.out=breaks + 1,
                             format=x@format, zone=x@time.zone)
           if( !include.lowest ) {
             if( !right )
@@ -548,7 +548,7 @@ setMethod( "cut", signature( x = "positionsCalendar" ),
                         labpaste[2], sep = "")
 	    cut( as(x,"numeric"), breaks = as( breaks, "numeric" ),
           labels = labels, include.lowest = include.lowest, right = right,
-          factor.result=factor.resulti )
+          factor.result=factor.result )
 	  })
 
 setMethod( "cut", signature( x = "timeSpan" ),
@@ -565,11 +565,12 @@ setMethod( "cut", signature( x = "timeSpan" ),
         right = TRUE
         if(length(x)) {
           rng <- range(x, na.rm=TRUE)
-          rng[is.na(rng)] <- timeSpan(jul=0)
+          rng[is.na(rng)] <- timeSpan(julian=0)
           if( rng[1] == rng[2] ) 
             rng[2] <- rng[2] + timeSpan("1MS" )
           rng <- as.double(rng)
-          breaks <- timeSpan(jul=seq(from=rng[1], to=rng[2], length=breaks + 1))
+          breaks <- timeSpan(julian=seq(from=rng[1], to=rng[2],
+            length.out=breaks + 1))
           if( !include.lowest ) {
             if( !right )
               breaks[length(breaks)] <-

@@ -132,7 +132,7 @@ timeZoneList <- function( ... )
   current <- if(exists(".time.zone.list", envir=.splusTimeDateEnv)) {
     .splusTimeDateEnv$.time.zone.list
   } else {
-    get(".time.zone.list", envir=as.environment("package:splusTimeDate"))
+    .time.zone.list
   }
 
   if( nargs() == 0 )

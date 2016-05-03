@@ -1,8 +1,8 @@
-f2771d2b0f512b849a5722c66e7497a2 *DESCRIPTION
-4900871bac1966efda2958552aa5d505 *LICENSE
-8eaf9fba0b6744f1df8757819ab60732 *NAMESPACE
+394441715933c2e9e3b71ae10f6dc191 *DESCRIPTION
+3304d6d911ea93fb084e8a371a563f80 *LICENSE
+df343907fc7edddadfd617126ec209fd *NAMESPACE
 ef78422d1cf9bb97b3681832c7128d44 *R/AllClasses.R
-6549e675111b733467d4227f593573ea *R/aaa.R
+e6d0d6e9a0e492f5452a67a2f64df924 *R/aaa.R
 5b14d7268ca7a0ea1cb89a6fc227f5b9 *R/align.R
 af9b096dd4805f868eea5d1a2a22a2f3 *R/event.R
 f4949179ee7a61c6839143fbf34d73f5 *R/form_td.R
@@ -13,12 +13,12 @@ a89dd9585b96320a9078052be4d0f54a *R/holidays.R
 b2d430be3868a0d6875550d8c0ce7859 *R/numSeq.R
 2ca322edfd62f9f15c6172e6a33cf8a7 *R/relTime.R
 4e93eecc681607a8832f5f3372066453 *R/timeAlign.R
-c0c18c1c7df2c3fa26c6e0b3c847cc1e *R/timeDate.R
-d3fd2f3e9c911e17d1372e0c294464fa *R/timeMath.R
+a5fe79f7fd3d2815f5a28801b7c17452 *R/timeDate.R
+f62cc39f7c3d3affd4b3680793932eea *R/timeMath.R
 d6d54978d6322b3d3b2c7f177256706a *R/timeSeq.R
-2f4ac0c9d8443004ef03d5de7884b1fb *R/timeSpan.R
+efb89c3f8e1e9e8cf9176fa8163aa46e *R/timeSpan.R
 a5e412866ff692978047cb3843aa3d6e *R/timeUtils.R
-c4599e00330e54ad9a3d8556077db30a *R/timeZone.R
+9a1300337b8606b4544f22038f4fc16b *R/timeZone.R
 3fd514719985824066b92c330601192f *R/zzz.R
 30d1799fae0aa115505dd79f3dd99d0c *man/class.GroupVec.Rd
 35165d99515c8ca2296e7e1c8829c10d *man/class.event.Rd
@@ -51,6 +51,7 @@ e2642bcfd9361a75ab7426ae5830c3af *man/mdy.Rd
 133a3e6e8c83a60ddb018bd42631ca23 *man/options.Rd
 6318e36d9aee44586ddf8e80f93cffa8 *man/reltime.Rd
 358f2f9edafbcc5a63d52e7bc3afb00d *man/shiftPositions.Rd
+84356c48f7a5266d8fa4ff3eb201fdef *man/sort.list.Rd
 7324f0c6dddbb9eea2404897bae43df7 *man/timcal.Rd
 ed95668f7ce897b1592cb18339cfc2ad *man/timconv.Rd
 c9d30eac635ee09597f3ad165083d7b4 *man/timeali.Rd
