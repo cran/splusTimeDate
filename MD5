@@ -1,4 +1,4 @@
-394441715933c2e9e3b71ae10f6dc191 *DESCRIPTION
+e05e3a381fc3066fdf384a467cb64e9a *DESCRIPTION
 3304d6d911ea93fb084e8a371a563f80 *LICENSE
 df343907fc7edddadfd617126ec209fd *NAMESPACE
 ef78422d1cf9bb97b3681832c7128d44 *R/AllClasses.R
@@ -51,7 +51,7 @@ e2642bcfd9361a75ab7426ae5830c3af *man/mdy.Rd
 133a3e6e8c83a60ddb018bd42631ca23 *man/options.Rd
 6318e36d9aee44586ddf8e80f93cffa8 *man/reltime.Rd
 358f2f9edafbcc5a63d52e7bc3afb00d *man/shiftPositions.Rd
-84356c48f7a5266d8fa4ff3eb201fdef *man/sort.list.Rd
+87155244f02b0e4efa16009c1fb6aa8c *man/sort.list.Rd
 7324f0c6dddbb9eea2404897bae43df7 *man/timcal.Rd
 ed95668f7ce897b1592cb18339cfc2ad *man/timconv.Rd
 c9d30eac635ee09597f3ad165083d7b4 *man/timeali.Rd

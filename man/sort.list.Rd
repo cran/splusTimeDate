@@ -10,7 +10,7 @@ the \code{splusTimeDate} package with methods for S4 classes:
 }
 \usage{
 sort.list(x, partial = NULL, na.last = TRUE, decreasing = FALSE,
-    method = c("auto", "shell", "quick", "radix"))
+    method)
 }
 \arguments{
   \item{x}{
