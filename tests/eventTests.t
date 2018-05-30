@@ -44,13 +44,13 @@
 }
 
 {
-    # summary method:
-    te02 <- timeEvent(start = timeCalendar(m=2, d=4:8, y=2013, h=8),
-        end = timeCalendar(m=2, d=5:9, y=2013, h=11:15),
-        ID = c("Mo", "Tu", "We", "Th", "Fr"))
-    ste02 <- summary(te02)
-    all(ste02[,1] ==
-        c("02/04/2013 08:00:00.000", "02/08/2013 08:00:00.000", "0")) &&
-        all(ste02[,2] ==
-            c("02/05/2013 11:00:00.000", "02/09/2013 15:00:00.000", "0")) 
+  # summary method:
+  te02 <- timeEvent(start = timeCalendar(m=2, d=4:8, y=2013, h=8),
+    end = timeCalendar(m=2, d=5:9, y=2013, h=11:15),
+    ID = c("Mo", "Tu", "We", "Th", "Fr"))
+  ste02 <- summary(te02)
+  all(ste02[,1] ==
+    c("02/04/2013 08:00:00.000", "02/08/2013 08:00:00.000", "0")) &&
+    all(ste02[,2] ==
+      c("02/05/2013 11:00:00.000", "02/09/2013 15:00:00.000", "0")) 
 }

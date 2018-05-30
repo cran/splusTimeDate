@@ -240,8 +240,8 @@ SEXP num_align( SEXP num_obj, SEXP align_pos,
 	      ( !over_set && (( how == 4 ) || ( how == 5 ))))))
       drop_data[ align_curr ] = 1;  /* drop on no match */
     else if(( how == 2 ) || 
-	    ((( error_how == 2 ) &&
-	     ( !under_set && (( how == 3 ) || ( how == 5 ))) ||
+	    (( error_how == 2 ) &&
+	     (( !under_set && (( how == 3 ) || ( how == 5 ))) ||
 	      ( !over_set && (( how == 4 ) || ( how == 5 ))))))
     {
       /* take nearest on no match */
@@ -523,8 +523,8 @@ SEXP time_align( SEXP time_obj, SEXP align_pos,
 	      ( !over_set && (( how == 4 ) || ( how == 5 ))))))
       drop_data[ align_curr ] = 1;  /* drop on no match */
     else if(( how == 2 ) || 
-	    ((( error_how == 2 ) &&
-	     ( !under_set && (( how == 3 ) || ( how == 5 ))) ||
+	    (( error_how == 2 ) &&
+	     (( !under_set && (( how == 3 ) || ( how == 5 ))) ||
 	      ( !over_set && (( how == 4 ) || ( how == 5 ))))))
     {
       /* take nearest on no match */

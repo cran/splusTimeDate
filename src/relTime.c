@@ -100,7 +100,7 @@ int rtime_add( TIME_DATE_STRUCT *td, char *rt_str, Sint *hol_dates,
   RT_CODE code;
   Sint jul;
 
-  if( num_hols && !hol_dates ||
+  if( (num_hols && !hol_dates) ||
       !td || !rt_str )
     return 0;
 
@@ -238,7 +238,7 @@ int rtime_add_with_zones( TIME_DATE_STRUCT *td, char *rt_str, Sint *hol_dates,
 
   in_GMT = 1;
 
-  if( num_hols && !hol_dates ||
+  if( (num_hols && !hol_dates) ||
       !td || !rt_str || !tzone )
     return 0;
 

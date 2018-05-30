@@ -27,7 +27,7 @@ timeSpan <- function( charvec, in.format, format, julian, ms )
       in.format <- timeDateOptions( "tspan.in.format" )[[1]]
 
     # read from the character strings
-    obj <- .Call( "tspan_from_string", charvec, in.format)
+    obj <- .tspan_from_string(charvec, in.format)
     if( class( obj ) != "timeSpan" )
       stop( "Unknown error in calling C function tspan_from_string" )
 
@@ -91,14 +91,14 @@ timeSpan <- function( charvec, in.format, format, julian, ms )
 }
 
 setAs( "timeSpan", "character",
-      function( from ) .Call( "tspan_to_string", from)
+      function( from ) .tspan_to_string(from)
       )
 
 setAs( "character", "timeSpan",
   function( from ) timeSpan( charvec = from ))
 
 setAs( "timeSpan", "numeric",
-      function( from ) .Call( "time_to_numeric", from)
+      function( from ) .time_to_numeric(from)
       )
 
 setAs( "timeSpan", "integer", function( from )
@@ -107,7 +107,7 @@ setAs( "timeSpan", "integer", function( from )
 setAs( "numeric", "timeSpan",
       function( from )
       {
-	out <- .Call( "time_from_numeric", as.double(from), "timeSpan")
+	out <- .time_from_numeric(as.double(from), "timeSpan")
 	out@format <- as( timeDateOptions("tspan.out.format")[[1]], "character" )
 	out
       })
@@ -219,7 +219,7 @@ setMethod("hms", signature(x="timeSpan"),
     function(x) {
         class(x) <- "timeDate"
         x@time.zone <- "GMT"
-        obj <- .Call("time_to_hour_min_sec", x, timeZoneList())
+        obj <- .time_to_hour_min_sec(x, timeZoneList())
         if(length(obj) != 4) {
             stop("Unknown problem in C function time_to_hour_min_sec")
         }

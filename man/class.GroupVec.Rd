@@ -6,7 +6,7 @@
 \alias{[<-,groupVec,ANY,ANY,list-method}
 \alias{[[,groupVec-method}
 \alias{[[<-,groupVec-method}
-\alias{all.equal.list,groupVec-method}
+\alias{all_equal_list,groupVec-method}
 \alias{c,groupVec-method}
 \alias{duplicated,groupVec-method}
 \alias{is.finite,groupVec-method}

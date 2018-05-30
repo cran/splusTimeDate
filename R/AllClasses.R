@@ -23,7 +23,7 @@ setClass( "timeZone", representation("VIRTUAL"))
 setClass( "timeZoneC",
     representation( name = "character"),
          contains="timeZone" ,
-    prototype=list( name = "utc" ),
+    prototype=prototype( name = "utc" ),
     validity = function( object )
 	  {
 	    if( length( object@name ) != 1 )
@@ -52,18 +52,22 @@ setClass( "timeZoneC",
 setClass( "timeZoneR",
          representation( offset = "integer", rules = "ANY" ),
          contains="timeZone",
-         prototype = list( offset = 0L, rules = data.frame() ))
+         prototype = prototype(
+             offset = 0L,
+             rules = data.frame() )
+         )
 
 setClass( "timeDate",
          representation(format = "character",
                         time.zone = "character" ),
          contains=c("groupVec", "positionsCalendar"),
          prototype=prototype(
-           columns=list(numeric(), numeric()),
-           names=c( "julian.day", "milliseconds" ),
-           classes=c( "integer", "integer" ),
-	   format = "%02m/%02d/%04Y %02H:%02M:%02S.%03N",
-	   time.zone = "GMT"),
+             columns=list(numeric(), numeric()),
+             names=c( "julian.day", "milliseconds" ),
+             classes=c( "integer", "integer" ),
+             format = "%02m/%02d/%04Y %02H:%02M:%02S.%03N",
+             time.zone = "GMT"
+             ),
          validity = function(object)
          {
            lens = c(length(object@columns), length(names(object)),

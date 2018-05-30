@@ -300,7 +300,7 @@ setMethod( "summary", "groupVec", function( object, ... )
   sumry
 })
 
-setMethod( "all.equal.list", "groupVec",
+setMethod( "all_equal_list", "groupVec",
 function (target, current, ...) 
 {
     check.attributes <- list(...)[["check.attributes"]]

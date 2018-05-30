@@ -300,7 +300,7 @@ function(from)
     {
       ## if we get here, by is a timeRelative from
       if( length( from@from )==0)
-        ret <- rev( .Call( "time_rel_seq",
+        ret <- rev( .time_rel_seq(
                           as(from@to, "timeDate"),
                           timeDate(), 
                           as(from@length, "integer"),
@@ -309,7 +309,7 @@ function(from)
                           as(sort(from@by@holidays), "timeDate"),
                           timeZoneList()))
       else if( length( from@to )==0)
-        ret <- .Call( "time_rel_seq",
+        ret <- .time_rel_seq(
                      as(from@from, "timeDate"),
                      timeDate(), 
                      as(from@length, "integer"),
@@ -318,7 +318,7 @@ function(from)
                      as(sort(from@by@holidays), "timeDate"),
                      timeZoneList())
       else
-        ret <- .Call( "time_rel_seq",
+        ret <- .time_rel_seq(
                      as(from@from, "timeDate"),
                      as(from@to,"timeDate"),
                      0L,

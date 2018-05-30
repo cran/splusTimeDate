@@ -242,11 +242,10 @@ setMethod( "+", signature( e1 = "positionsCalendar", e2 = "timeRelative" ),
 	   function( e1, e2 ) 
 	   {
 	     e1 <- as( e1, "timeDate" )
-	     tmp <- .Call( "time_rel_add",
-                          as(e1, "timeDate"),
-                          as(e2@Data, "character"),
-                          as(sort(e2@holidays), "timeDate"),
-                          timeZoneList())
+	     tmp <- .time_rel_add(as(e1, "timeDate"),
+                            as(e2@Data, "character"),
+                            as(sort(e2@holidays), "timeDate"),
+                            timeZoneList())
 	     e1@columns <- tmp@columns
 	     e1
 	   } ) 

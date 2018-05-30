@@ -870,7 +870,7 @@ SEXP time_rel_add( SEXP time_vec, SEXP rel_strs,
 
   if( !time_get_pieces( hol_vec, NULL, &hol_days, &hol_ms, &lng_hol, NULL, 
 			&td_hol.zone, NULL ) ||
-      ( lng_hol && (!hol_days || !hol_ms ) || !td_hol.zone ))
+      (( lng_hol && (!hol_days || !hol_ms )) || !td_hol.zone ))
     error( "Invalid holiday argument in C function time_rel_add" );
 
   tzone_hol = find_zone( td_hol.zone, zone_list );
@@ -1062,7 +1062,7 @@ SEXP time_rel_seq( SEXP start_time, SEXP end_time,
 
   if( !time_get_pieces( hol_vec, NULL, &hol_days, &hol_ms, &lng_hol, NULL, 
 			&td_hol.zone, NULL ) ||
-      ( lng_hol && (!hol_days || !hol_ms ) || !td_hol.zone )){
+      (( lng_hol && (!hol_days || !hol_ms )) || !td_hol.zone )){
     UNPROTECT(num_protect);
     error( "Invalid holiday argument in C function time_rel_seq" );
   }

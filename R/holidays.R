@@ -53,7 +53,7 @@ holiday.weekday.number <- function( years, month, weekday, index )
 # Function will omit dates that don't exist, e.g. if you ask
 # for the 5th Friday in March and there isn't one that year
 
-  ret <- .Call( "time_from_month_day_index", as.integer(month),
+  ret <- .time_from_month_day_index(as.integer(month),
                as.integer(weekday), as.integer(index), as.integer(years))
   ret <- timeZoneConvert(ret, as(timeDateOptions("time.zone")[[1]], "character"))
   ret@format <- timeDateFormatChoose(ret@columns[[2]], ret@time.zone)
@@ -64,8 +64,7 @@ holiday.nearest.weekday <- function( dates. )
 {
 # Function that moves input dates falling on Saturday to the day
 # before, and Sundays to the day after
-  wkdays <- .Call( "time_to_weekday", as(dates., "timeDate"),
-                  timeZoneList())
+  wkdays <- .time_to_weekday(as(dates., "timeDate"), timeZoneList())
   addto <- -1 * ( wkdays == 6 ) + ( wkdays == 0 )
   dates. + addto
 }
@@ -97,7 +96,7 @@ holiday.Presidents <- function( years )
 holiday.Easter <- function( years )
 {
   # calculate when easter is
-  ret <- .Call( "time_easter", as.integer(years))
+  ret <- .time_easter(as.integer(years))
   ret <- timeZoneConvert(ret, as(timeDateOptions("time.zone")[[1]], "character"))
   ret@format <- timeDateFormatChoose(ret@columns[[2]], ret@time.zone)
   ret
@@ -211,8 +210,7 @@ holiday.NYSE <- function( years )
 					     years == 1976 | years == 1980],
 				       11, 1, 1) + 1)
   # Holiday list is complete. Now Sunday holidays move to Monday.
-  wkdays <- .Call( "time_to_weekday", ret,
-		  timeZoneList())
+  wkdays <- .time_to_weekday(ret, timeZoneList())
   sun <- wkdays == 0
   ret[sun] <- ret[sun] + 1
   # after July 3, 1959, Saturday holidays move to Friday except if
@@ -221,7 +219,7 @@ holiday.NYSE <- function( years )
      (ret + timeRelative( "-1day +a1mth -1wkd" )) != (ret - 1)
   ret[sat] <- ret[sat] -1
   # take out remaining weekend dates, sort, and return
-  wkdays <- .Call( "time_to_weekday", ret, timeZoneList())
+  wkdays <- .time_to_weekday(ret, timeZoneList())
   unique(sort(ret[ wkdays != 0 & wkdays != 6]))
 }
 

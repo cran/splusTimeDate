@@ -120,7 +120,6 @@ exportMethods(## for both own and "other" generics:
     "[<-",
     "[[",
     "[[<-",
-    "all.equal.list",
     "c",
     "coerce",
     "cor",

@@ -63,7 +63,7 @@ timeDate <- function( charvec, in.format, format, zone, julian, ms,
     defaults <- timeDefaults()
     defaults$zone <- zone
 
-    obj <- .Call( "time_from_string",
+    obj <- .time_from_string(
                  as(charvec, "character"),
                  as(in.format, "character"),
                  defaults, timeZoneList())
@@ -83,7 +83,7 @@ timeDate <- function( charvec, in.format, format, zone, julian, ms,
       julian <- rep( 0, length( ms ))
 
     # add in the origin
-    origin <- .Call( "time_from_month_day_year",
+    origin <- .time_from_month_day_year(
                     as.integer(in.origin[["month"]]),
                     as.integer(in.origin[["day"]]),
                     as.integer(in.origin[["year"]]))
@@ -184,12 +184,11 @@ timeCalendar <- function( m=NULL, d=NULL, y=NULL, h=NULL, min=NULL,
 
   # create the julian days part of the object
 
-  daytimes <- .Call( "time_from_month_day_year",
-                    as.integer(m),  as.integer(d),  as.integer(y))
+  daytimes <- .time_from_month_day_year(as.integer(m), as.integer(d), as.integer(y))
 
   # create the ms part of the object
-  mstimes <- .Call( "time_from_hour_min_sec",  as.integer(h),  as.integer(min),
-                    as.integer(s),  as.integer(ms))
+  mstimes <- .time_from_hour_min_sec(as.integer(h), as.integer(min),
+                    as.integer(s), as.integer(ms))
 
   # merge the two times vectors
 
@@ -200,7 +199,7 @@ timeCalendar <- function( m=NULL, d=NULL, y=NULL, h=NULL, min=NULL,
 
   if( missing( zone)) zone <- timeDateOptions( "time.zone" )[[1]]
 
-  daytimes <- .Call( "time_to_zone", daytimes, zone, timeZoneList())
+  daytimes <- .time_to_zone(daytimes, zone, timeZoneList())
 
   # put the format on
 
@@ -229,7 +228,7 @@ function(x, zone)
 		# originally this function was only intended to work when
 		# x was made in GMT time zone, since that was the default one.
 		# We continue to use fast algorithm in that case.
-		result <- .Call("time_to_zone", x, zone, timeZoneList())
+		result <- .time_to_zone(x, zone, timeZoneList())
 		result@time.zone <- zone
 		result@format <- x@format
 		result
@@ -256,16 +255,14 @@ setMethod("timeConvert", "timeDate",
 
 
 setAs( "timeDate", "character",
-      function( from ) .Call( "time_to_string",
-                             from,
-                             timeDefaults(), timeZoneList())
+      function( from ) .time_to_string(from, timeDefaults(), timeZoneList())
       )
 
 setAs( "character", "timeDate",
   function( from ) timeDate( from ))
 
 setAs( "timeDate", "numeric",
-      function( from ) .Call( "time_to_numeric", from)
+      function( from ) .time_to_numeric(from)
       )
 
 setAs( "timeDate", "integer", function( from )
@@ -274,7 +271,7 @@ setAs( "timeDate", "integer", function( from )
 setAs( "numeric", "timeDate",
       function( from )
       {
-	out <- .Call( "time_from_numeric", as.double(from), "timeDate")
+	out <- .time_from_numeric(as.double(from), "timeDate")
 	out@time.zone <- as( timeDateOptions( "time.zone" )[[1]], "character" )
 	out@format <- timeDateFormatChoose(out@columns[[2]], out@time.zone)
 	out
@@ -406,8 +403,7 @@ setMethod("mdy", signature( x = "positionsCalendar" ),
    function(x)
    {
      # return a length 3 list with month, day, year of each element
-     obj <- .Call( "time_to_month_day_year", x,
-		 timeZoneList())
+     obj <- .time_to_month_day_year(x, timeZoneList())
      if( length( obj ) != 3 )
        stop( "Unknown problem in C function time_to_month_day_year" )
      data.frame( month = obj[[1]], day = obj[[2]], year = obj[[3]] )
@@ -418,8 +414,7 @@ setMethod("hms", signature( x = "positionsCalendar" ),
    function(x)
    {
      # return a length 4 list with hour, minute, second, ms of each value
-     obj <- .Call( "time_to_hour_min_sec", x,
-		 timeZoneList())
+     obj <- .time_to_hour_min_sec(x, timeZoneList())
      if( length( obj ) != 4 )
        stop( "Unknown problem in C function time_to_hour_min_sec" )
      data.frame( hour = obj[[1]], minute = obj[[2]], second = obj[[3]],
@@ -430,10 +425,8 @@ setMethod("hms", signature( x = "positionsCalendar" ),
 setMethod( "wdydy", "positionsCalendar",
   function( x )
   {
-     wd <- .Call( "time_to_weekday", x,
-		 timeZoneList())
-     d <- .Call( "time_to_year_day", x,
-		 timeZoneList())
+     wd <- .time_to_weekday(x, timeZoneList())
+     d <- .time_to_year_day(x, timeZoneList())
      if( length( d ) != 2 )
       stop( "Unknown problem in C function time_to_year_day" )
      data.frame( weekday = wd, yearday = d[[2]], year = d[[1]] )
@@ -539,7 +532,7 @@ setMethod( "timeFloor", "positionsCalendar",
 	  function( x )
 	  {
 	    # floor method for time objects
-	    ret <- .Call( "time_floor", x, timeZoneList() )
+	    ret <- .time_floor(x, timeZoneList())
 	    ret@format <- x@format
 	    ret@time.zone <- x@time.zone
 	    ret
@@ -549,7 +542,7 @@ setMethod( "timeCeiling", "positionsCalendar",
 	  function( x )
 	  {
 	    # ceiling method for time objects
-	    ret <- .Call( "time_ceiling", x, timeZoneList() )
+	    ret <- .time_ceiling(x, timeZoneList())
 	    ret@format <- x@format
 	    ret@time.zone <- x@time.zone
 	    ret
@@ -562,7 +555,7 @@ setMethod( "floor", "positionsCalendar",
 	  function( x )
 	  {
 	    # floor method for time objects
-	    ret <- .Call( "time_floor", x, timeZoneList())
+	    ret <- .time_floor(x, timeZoneList())
 	    ret@format <- x@format
 	    ret@time.zone <- x@time.zone
 	    ret
@@ -572,7 +565,7 @@ setMethod( "ceiling", "positionsCalendar",
 	  function( x )
 	  {
 	    # ceiling method for time objects
-	    ret <- .Call( "time_ceiling", x, timeZoneList())
+	    ret <- .time_ceiling(x, timeZoneList())
 	    ret@format <- x@format
 	    ret@time.zone <- x@time.zone
 	    ret

@@ -1,6 +1,6 @@
 Package: splusTimeDate
-Version: 2.5.0-137
-Date: 2016-05-08
+Version: 2.5.0-141
+Date: 2018-05-23
 Title: Times and Dates from S-PLUS
 Description: A collection of classes and methods for working with
   times and dates. The code was originally available in S-PLUS.
@@ -11,6 +11,6 @@ LazyData: yes
 BuildResaveData: no
 License: BSD_3_clause + file LICENSE
 NeedsCompilation: yes
-Packaged: 2016-05-08 19:39:15 UTC; spk
 Repository: CRAN
-Date/Publication: 2016-05-10 10:14:37
+Packaged: 2018-05-24 23:17:27 UTC; spk
+Date/Publication: 2018-05-30 22:47:56 UTC

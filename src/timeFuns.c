@@ -1081,7 +1081,7 @@ SEXP time_from_hour_min_sec( SEXP hour_vec,
   in_ms = INTEGER(ms_vec);
   lng = length(hour_vec);
   if( !in_hours || !in_mins || length(min_vec)!=lng ||
-      !in_secs || length(sec_vec)!=lng |
+      !in_secs || length(sec_vec)!=lng ||
       !in_ms || length(ms_vec)!=lng)
     error( "Problem extracting input data in c function time_from_hour_min_sec");
 

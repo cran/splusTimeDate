@@ -2,8 +2,7 @@ setMethod( "-", signature( e1 = "positionsCalendar",
 			   e2 = "positionsCalendar" ),
 	  function( e1, e2 = NULL )
 	  {
-	     out <- .Call( "time_time_add", as(e1, "timeDate"), as( e2, "timeDate"),
-             -1., "timeSpan")
+	     out <- .time_time_add(as(e1, "timeDate"), as( e2, "timeDate"), -1., "timeSpan")
 	     out@format <- as( timeDateOptions("tspan.out.format")[[1]], "character" )
 	     out
 	   })
@@ -11,8 +10,7 @@ setMethod( "-", signature( e1 = "positionsCalendar",
 setMethod( "-", signature( e1 = "positionsCalendar", e2 = "timeSpan" ),
 	  function( e1, e2 = NULL )
 	  {
-           ret <- .Call( "time_time_add", as(e1, "timeDate"), e2,
-               -1., "timeDate")
+	       ret <- .time_time_add(as(e1, "timeDate"), e2, -1., "timeDate")
 	       ret@time.zone <- e1@time.zone
 	       ret@format <- e1@format
 	       ret
@@ -21,7 +19,7 @@ setMethod( "-", signature( e1 = "positionsCalendar", e2 = "timeSpan" ),
 setMethod( "-", signature( e1 = "timeSpan", e2 = "timeSpan" ),
 	  function( e1, e2 = NULL )
 	  {
-            ret <- .Call( "time_time_add", e1, e2, -1., "timeSpan")
+	     ret <- .time_time_add(e1, e2, -1., "timeSpan")
 	     ret@format <- e1@format
 	     ret
 	   })
@@ -29,8 +27,7 @@ setMethod( "-", signature( e1 = "timeSpan", e2 = "timeSpan" ),
 setMethod( "+", signature( e1 = "positionsCalendar", e2 = "timeSpan" ),
 	  function( e1, e2 = NULL )
 	  {
-          ret <- .Call( "time_time_add", as(e1, "timeDate"), e2,
-              1., "timeDate")
+	      ret <- .time_time_add(as(e1, "timeDate"), e2, 1., "timeDate")
 	      ret@time.zone <- e1@time.zone
 	      ret@format <- e1@format
 	      ret
@@ -39,7 +36,7 @@ setMethod( "+", signature( e1 = "positionsCalendar", e2 = "timeSpan" ),
 setMethod( "+", signature( e1 = "timeSpan", e2 = "positionsCalendar" ),
 	  function( e1, e2 = NULL )
 	  {
-	     ret <- .Call( "time_time_add", e1, as(e2, "timeDate"), 1., "timeDate")
+	     ret <- .time_time_add(e1, as(e2, "timeDate"), 1., "timeDate")
 	     ret@time.zone <- e2@time.zone
 	     ret@format <- e2@format
 	     ret
@@ -49,7 +46,7 @@ setMethod( "+", signature( e1 = "timeSpan", e2 = "positionsCalendar" ),
 setMethod( "+", signature( e1 = "timeSpan", e2 = "timeSpan" ),
 	  function( e1, e2 = NULL )
 	  {
-	     ret <- .Call( "time_time_add", e1, e2, 1., "timeSpan")
+	     ret <- .time_time_add(e1, e2, 1., "timeSpan")
 	     ret@format <- e1@format
 	     ret
 	   })
@@ -64,7 +61,7 @@ setMethod( "Arith", signature( e1 = "timeSpan", e2 = "numeric" ),
 	  {
 	    if(( .Generic != "+" ) && ( .Generic != "-" ))
 	      return( callGeneric( as(e1, "numeric"), e2 ))
-	    ret <- .Call( "time_num_op", e1, e2, .Generic)
+	    ret <- .time_num_op(e1, e2, .Generic)
 	    ret@format <- e1@format
 	    ret
 	  })
@@ -74,7 +71,7 @@ setMethod( "Arith", signature( e1 = "numeric", e2 = "timeSpan" ),
 	  {
 	    if( .Generic == "+" )
 	    {
-	      ret <- .Call( "time_num_op", e2, e1, .Generic)
+	      ret <- .time_num_op(e2, e1, .Generic)
 	      ret@format <- e2@format
 	      ret
 	    }
@@ -89,7 +86,7 @@ setMethod( "+", signature( e1 = "timeSpan", e2 = "missing" ),
 setMethod( "-", signature( e1 = "timeSpan", e2 = "missing" ),
 	   function( e1, e2 = NULL )
 	   {
-	    ret <- .Call( "time_num_op", e1, -1., "*")
+	    ret <- .time_num_op(e1, -1., "*")
 	    ret@format <- e1@format
 	    ret
 	  })
@@ -97,7 +94,7 @@ setMethod( "-", signature( e1 = "timeSpan", e2 = "missing" ),
 setMethod( "+", signature( e1 = "positionsCalendar", e2 = "numeric" ),
 	  function( e1, e2 = NULL )
 	  {
-	    ret <- .Call( "time_num_op", as(e1, "timeDate"), e2, "+")
+	    ret <- .time_num_op(as(e1, "timeDate"), e2, "+")
 	    ret@format <- e1@format
 	    ret@time.zone <- e1@time.zone
 	    ret
@@ -106,7 +103,7 @@ setMethod( "+", signature( e1 = "positionsCalendar", e2 = "numeric" ),
 setMethod( "-", signature( e1 = "positionsCalendar", e2 = "numeric" ),
 	  function( e1, e2 = NULL )
 	  {
-	    ret <- .Call( "time_num_op", as(e1, "timeDate"), e2, "-")
+	    ret <- .time_num_op(as(e1, "timeDate"), e2, "-")
 	    ret@format <- e1@format
 	    ret@time.zone <- e1@time.zone
 	    ret
@@ -115,7 +112,7 @@ setMethod( "-", signature( e1 = "positionsCalendar", e2 = "numeric" ),
 setMethod( "+", signature( e1 = "numeric", e2 = "positionsCalendar" ),
 	  function( e1, e2 = NULL )
 	  {
-	    ret <- .Call( "time_num_op", as(e2, "timeDate"), e1, "+")
+	    ret <- .time_num_op(as(e2, "timeDate"), e1, "+")
 	    ret@format <- e2@format
 	    ret@time.zone <- e2@time.zone
 	    ret
@@ -135,7 +132,7 @@ setMethod( "min", signature( x = "positionsCalendar" ),
 	   function( x, ..., na.rm = FALSE)
 	   {
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", as(x, "timeDate"),  na.rm)
+	     ret <- .time_range(as(x, "timeDate"),  na.rm)
 	     ret@format <- x@format
 	     ret@time.zone <- x@time.zone
 	     ret[1]
@@ -145,7 +142,7 @@ setMethod( "max", signature( x = "positionsCalendar" ),
 	   function( x, ..., na.rm = FALSE)
 	   {
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", as(x, "timeDate"), na.rm)
+	     ret <- .time_range(as(x, "timeDate"), na.rm)
 	     ret@format <- x@format
 	     ret@time.zone <- x@time.zone
 	     ret[2]
@@ -155,7 +152,7 @@ setMethod( "range", signature( x = "positionsCalendar" ),
 	   function( x, ..., na.rm = FALSE)
 	   {
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", as(x, "timeDate"), na.rm)
+	     ret <- .time_range(as(x, "timeDate"), na.rm)
 	     ret@format <- x@format
 	     ret@time.zone <- x@time.zone
 	     ret
@@ -167,7 +164,7 @@ setMethod( "min", signature( x = "timeSpan" ),
          z <- list(...)
          for(i in z) x <- c(x, i)
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", x, na.rm)
+	     ret <- .time_range(x, na.rm)
 	     ret@format <- x@format
 	     ret[1]
 	   })
@@ -178,7 +175,7 @@ setMethod( "max", signature( x = "timeSpan" ),
          z <- list(...)
          for(i in z) x <- c(x, i)
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", x, na.rm)
+	     ret <- .time_range(x, na.rm)
 	     ret@format <- x@format
 	     ret[2]
 	   })
@@ -189,7 +186,7 @@ setMethod( "range", signature( x = "timeSpan" ),
          z <- list(...)
          for(i in z) x <- c(x, i)
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_range", x, na.rm)
+	     ret <- .time_range(x, na.rm)
 	     ret@format <- x@format
 	     ret
 	   })
@@ -201,7 +198,7 @@ setMethod( "sum", signature( x = "timeSpan" ),
          z <- list(...)
          for(i in z) x <- c(x, i)
 	     # ignore other arguments -- generic takes care of them
-	     ret <- .Call( "time_sum", x, na.rm, FALSE)
+	     ret <- .time_sum(x, na.rm, FALSE)
 	     ret@format <- x@format
 	     ret
 	   })
@@ -209,8 +206,8 @@ setMethod( "sum", signature( x = "timeSpan" ),
 setMethod( "cumsum", signature( x = "timeSpan" ),
 	   function( x )
 	   {
-	     ret <- .Call( "time_sum", x, FALSE, TRUE)
-             ret@format <- x@format
+	     ret <- .time_sum(x, FALSE, TRUE)
+	     ret@format <- x@format
 	     ret
 	   })
 
