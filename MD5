@@ -1,5 +1,5 @@
-6f6be4d232739ca4ebaae3056725b12c *DESCRIPTION
-7c9d393c5f79588b2cbc99ec2c75ea40 *LICENSE
+073e266fd75af16ec0a8b8acbffc6be5 *DESCRIPTION
+368619384b025e3db378e21cdee349a5 *LICENSE
 f22ed5d216a66e7485ff43a72f9b4706 *NAMESPACE
 3ec1c00204831374d3e1a147d24196c8 *R/AllClasses.R
 ca913f29bd3fe105919119e1da6f1296 *R/aaa.R
@@ -83,7 +83,7 @@ c9bd51e2feeb8791c0db6ea7d37410fa *src/optionsObj.c
 a6a9d41d81ac3b9c21d8062096922869 *src/timeFormat.h
 3505e1c4ecc3d288951e947909292dc4 *src/timeFuns.c
 45eaf254520bb5bd9ad371215187ed8c *src/timeFuns.h
-e6d092a0f7a703cbb0491b9796568c9e *src/timeObj.c
+66b2dcc760148170ec1763430a0796cb *src/timeObj.c
 1f326bd8accfdde1406b386de6949fbb *src/timeObj.h
 91c9dd2d7c929e9a25a2f1d9436e7032 *src/timeSpanFormat.c
 c406b538bfd16f225fc51955c8e0339e *src/timeSpanFormat.h

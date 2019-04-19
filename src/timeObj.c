@@ -520,8 +520,8 @@ SEXP time_create_new( Sint new_length, Sint **day_data, Sint **ms_data )
     time_init();
 
   /* create a new time object */
-
-  PROTECT( ret = NEW_OBJECT(MAKE_CLASS( TIME_CLASS_NAME )));
+  PROTECT( time_class = MAKE_CLASS( TIME_CLASS_NAME )) ;
+  PROTECT( ret = NEW_OBJECT(time_class));
   PROTECT( tmp = NEW_LIST(2) );
 
   /* make the data list parts the right length */
@@ -533,7 +533,7 @@ SEXP time_create_new( Sint new_length, Sint **day_data, Sint **ms_data )
   if(day_data) *day_data = INTEGER( VECTOR_ELT(tmp, 0) );
   if(ms_data) *ms_data = INTEGER( VECTOR_ELT(tmp, 1) );
 
-  UNPROTECT(2);
+  UNPROTECT(3);
   return ret;
 
 }
@@ -695,7 +695,8 @@ SEXP tspan_create_new( Sint new_length, Sint **day_data, Sint **ms_data )
 
   /* create a new time object */
 
-  PROTECT(ret = NEW_OBJECT( MAKE_CLASS( TSPAN_CLASS_NAME ) ) );
+  PROTECT( tspan_class = MAKE_CLASS( TSPAN_CLASS_NAME )) ;
+  PROTECT( ret = NEW_OBJECT(tspan_class)) ;
   PROTECT( tmp = NEW_LIST(2) );
 
   /* make the data list parts the right length */
@@ -707,6 +708,6 @@ SEXP tspan_create_new( Sint new_length, Sint **day_data, Sint **ms_data )
   if(day_data) *day_data = INTEGER( VECTOR_ELT(tmp, 0) );
   if(ms_data) *ms_data = INTEGER( VECTOR_ELT(tmp, 1) );
 
-  UNPROTECT(2);
+  UNPROTECT(3);
   return ret;
 }
