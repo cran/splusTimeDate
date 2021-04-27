@@ -1,9 +1,9 @@
-073e266fd75af16ec0a8b8acbffc6be5 *DESCRIPTION
-368619384b025e3db378e21cdee349a5 *LICENSE
-f22ed5d216a66e7485ff43a72f9b4706 *NAMESPACE
+1dbf2b64cde7dd01fa86502bbf6dad95 *DESCRIPTION
+50eb5ed701f6901bafa7142103c7e76c *LICENSE
+b730ff44d770c3d549e259e5b0b23bed *NAMESPACE
 3ec1c00204831374d3e1a147d24196c8 *R/AllClasses.R
 ca913f29bd3fe105919119e1da6f1296 *R/aaa.R
-064f0600c7252b2d73f3d604abb0291d *R/align.R
+49f919154429e0e0c8775f2aff14c3d7 *R/align.R
 af9b096dd4805f868eea5d1a2a22a2f3 *R/event.R
 f4949179ee7a61c6839143fbf34d73f5 *R/form_td.R
 89e04dc49ad7debe904d04c166e54da5 *R/form_ts.R
@@ -28,7 +28,7 @@ ef265259765ed74f2848db9e5acbba15 *man/class.GroupVec.Rd
 d3d2d2fbf5ab81a423a165881ef19950 *man/class.time.Rd
 6b3bd1e08550d97803899cfabf2a3528 *man/class.time.sequence.Rd
 3357241f138729becbcf9112122ab3b3 *man/class.time.span.Rd
-59ed66951db8d3cd88f25e526d59d3f4 *man/class.time.zone.Rd
+590769cf81ed735a5296440e399a22eb *man/class.time.zone.Rd
 f5d5be8399d99451c12dd4caf3ff3959 *man/days.Rd
 92379b497aca1c04868077a689497c1f *man/event.Rd
 7705bc043939e6c18083089f117480de *man/format.timeDate.Rd
