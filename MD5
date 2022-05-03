@@ -1,5 +1,5 @@
-1dbf2b64cde7dd01fa86502bbf6dad95 *DESCRIPTION
-50eb5ed701f6901bafa7142103c7e76c *LICENSE
+f25f8b0a9f6ee67bce034686abeccb2b *DESCRIPTION
+6d49b0591b6141862a77b1aaf5a23b7e *LICENSE
 b730ff44d770c3d549e259e5b0b23bed *NAMESPACE
 3ec1c00204831374d3e1a147d24196c8 *R/AllClasses.R
 ca913f29bd3fe105919119e1da6f1296 *R/aaa.R
@@ -30,9 +30,9 @@ d3d2d2fbf5ab81a423a165881ef19950 *man/class.time.Rd
 3357241f138729becbcf9112122ab3b3 *man/class.time.span.Rd
 590769cf81ed735a5296440e399a22eb *man/class.time.zone.Rd
 f5d5be8399d99451c12dd4caf3ff3959 *man/days.Rd
-92379b497aca1c04868077a689497c1f *man/event.Rd
+ce6b5bd2aeabdcf65a89fa2c8cf71861 *man/event.Rd
 7705bc043939e6c18083089f117480de *man/format.timeDate.Rd
-cdf4db43a5d7b11cf1d09652163e0699 *man/groupvec.Rd
+bdc05e85fae7d3833cd60c5d7cbd84f2 *man/groupvec.Rd
 855a9c8b50a9a15b8ab91c3ea360377b *man/gvclasses.Rd
 95ae9b9d6898061b1863b7d056f6e924 *man/gvcol.Rd
 216b7a7459315afaa4af7212df2dbbd5 *man/gvdata.Rd
@@ -47,8 +47,8 @@ e23faaffe8dc08fd61250d9f18bf9b85 *man/holidays.Rd
 c02ddf2802f297b655fca6f0262aeb6d *man/hours.Rd
 cbb7d736254242d92792a5f031384b2a *man/is.monthend.Rd
 e2642bcfd9361a75ab7426ae5830c3af *man/mdy.Rd
-35a4e04f1b42c504ff9fefb700e08ffb *man/numseq.Rd
-133a3e6e8c83a60ddb018bd42631ca23 *man/options.Rd
+93093e6834a134ca11d488e265da57cd *man/numseq.Rd
+d6b2855bca291d7821b0600566832971 *man/options.Rd
 6318e36d9aee44586ddf8e80f93cffa8 *man/reltime.Rd
 358f2f9edafbcc5a63d52e7bc3afb00d *man/shiftPositions.Rd
 87155244f02b0e4efa16009c1fb6aa8c *man/sort.list.Rd
@@ -57,13 +57,13 @@ ed95668f7ce897b1592cb18339cfc2ad *man/timconv.Rd
 c9d30eac635ee09597f3ad165083d7b4 *man/timeali.Rd
 af9106903a406b55e3a2ae83af30b5dd *man/timeceil.Rd
 0a5d677dd8c1fdca2fd3cf24bd6f27f3 *man/timeconv.Rd
-1a3a9154dd1bfa48b6701338df647e28 *man/timedate.Rd
+758dd43875ee69adcf1ff89bb4b463d3 *man/timedate.Rd
 39c6e1820a6e7adcbf475be6e86029d9 *man/timedef.Rd
-bd7a4d60a05db266dc8a408de202f5c1 *man/timespan.Rd
+ddd32ac71e99e0ada6fd9956a736c576 *man/timespan.Rd
 ecfcbd054141d08e05bcf72e34d3d37e *man/timseq.Rd
 5abda9e4de4d6c3f2aa9b9ccfb7fc047 *man/timznc.Rd
 fca18c56d6e3d4351bd56f07a72bb82e *man/timznlst.Rd
-6061ab5b5c5205bc15d04f65535ef24e *man/timzns.Rd
+5a26bbaf251cd3241bbcfc61ff529890 *man/timzns.Rd
 69eaa0656708c5005ee1b46316194491 *man/tsequen.Rd
 1493c5f45b5084144fd3c01cb2fb5d8a *src/Syms.h
 36f9724159a6ecbbb9274c46de8ebf8b *src/align.c
