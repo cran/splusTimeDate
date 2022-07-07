@@ -1,4 +1,4 @@
-f25f8b0a9f6ee67bce034686abeccb2b *DESCRIPTION
+b2f26443a2d5775ffa1d4645770844c6 *DESCRIPTION
 6d49b0591b6141862a77b1aaf5a23b7e *LICENSE
 b730ff44d770c3d549e259e5b0b23bed *NAMESPACE
 3ec1c00204831374d3e1a147d24196c8 *R/AllClasses.R
@@ -13,10 +13,10 @@ e225087b15d82f5c0119b16c2c5fd000 *R/holidays.R
 b2d430be3868a0d6875550d8c0ce7859 *R/numSeq.R
 e28ca07c0cdd9ec06183fce2b118c31c *R/relTime.R
 4e93eecc681607a8832f5f3372066453 *R/timeAlign.R
-b4688b99c2dc0a5aaa5acd517fbbbca2 *R/timeDate.R
+8d99ea5dafa4655a7021ace33f035fed *R/timeDate.R
 731c59591835529bfaaddf235b48aad4 *R/timeMath.R
 02e0417edd3fcf52aa523a4336e2ae93 *R/timeSeq.R
-6649f091396144e55439852a4eab422e *R/timeSpan.R
+975d7c81dadfca802c79cd44e911a313 *R/timeSpan.R
 a5e412866ff692978047cb3843aa3d6e *R/timeUtils.R
 9a1300337b8606b4544f22038f4fc16b *R/timeZone.R
 3fd514719985824066b92c330601192f *R/zzz.R
@@ -25,9 +25,9 @@ ef265259765ed74f2848db9e5acbba15 *man/class.GroupVec.Rd
 18c00f783f361ce3ce82983a83650241 *man/class.numeric.sequence.Rd
 4cf80ebc836d1980ec3795fa8f487c01 *man/class.positions.Rd
 7e04f7dd62807ea96da41d684c3f61a3 *man/class.rel.time.Rd
-d3d2d2fbf5ab81a423a165881ef19950 *man/class.time.Rd
+bf2d7208fcf08d038e22db37ee5bb3b8 *man/class.time.Rd
 6b3bd1e08550d97803899cfabf2a3528 *man/class.time.sequence.Rd
-3357241f138729becbcf9112122ab3b3 *man/class.time.span.Rd
+342e6a4f4564186ba6a756038eafd6ba *man/class.time.span.Rd
 590769cf81ed735a5296440e399a22eb *man/class.time.zone.Rd
 f5d5be8399d99451c12dd4caf3ff3959 *man/days.Rd
 ce6b5bd2aeabdcf65a89fa2c8cf71861 *man/event.Rd
@@ -88,7 +88,7 @@ a6a9d41d81ac3b9c21d8062096922869 *src/timeFormat.h
 91c9dd2d7c929e9a25a2f1d9436e7032 *src/timeSpanFormat.c
 c406b538bfd16f225fc51955c8e0339e *src/timeSpanFormat.h
 783841ba2499cbf90ea443a8f4c0a536 *src/timeUtils.c
-044e1695cc8b68b6774942311e164d52 *src/timeUtils.h
+44114c4c610f587b0ecfb62555730e60 *src/timeUtils.h
 a3cc6f54a63a4a742c4b368db330e91f *src/zoneFuns.c
 3c48f6bae3bde90d13926710bd2fcac3 *src/zoneFuns.h
 0a6bc9fb661f647ab57f5e35d99d3e98 *src/zoneObj.c
