@@ -26,7 +26,6 @@ static SEXP offset_slot;
 static SEXP rules_slot;
 
 static int zone_initialized = 0;
-static void zone_init();
 static int r_zone_to_struct( SEXP obj, void **ret_struct );
 
 /**********************************************************************
@@ -49,7 +48,7 @@ static int r_zone_to_struct( SEXP obj, void **ret_struct );
    NOTE
 
  **********************************************************************/
-static void zone_init()
+static void zone_init(void)
 {
 
   if( zone_initialized )

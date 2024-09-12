@@ -2,7 +2,7 @@
 \alias{format.timeDate}
 \alias{format.timeSpan}
 \title{
-  Sample Formats
+  Lists of Sample Formats
 }
 \description{
 The \code{format.timeDate}  and \code{format.timeSpan} data sets are
@@ -24,6 +24,4 @@ input and output string formats.
   \code{\linkS4class{timeDate}}  class,
   \code{\linkS4class{timeSpan}}  class.
 }
-\keyword{sysdata}
-% docclass is data
-% Converted by mySd2Rd version 47442.
+\keyword{datasets}

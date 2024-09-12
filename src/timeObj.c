@@ -30,9 +30,6 @@ static int time_initialized = 0;
 static const char *DEFAULT_OUT_FORMAT = " ";
 static const char *DEFAULT_ZONE = "GMT";
 
-/* internal functions */
-static void time_init();
-
 
 /****************************
   Internal functions
@@ -60,7 +57,7 @@ static void time_init();
    NOTE
 
 **********************************************************************/
-static void time_init()
+static void time_init(void)
 {
 
   if( time_initialized )

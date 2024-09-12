@@ -10,12 +10,10 @@
 \alias{coerce,positionsCalendar,timeEvent-method}
 \alias{show,timeEvent-method}
 \alias{summary,timeEvent-method}
-%
 \title{
   Event Class 
 }
 \docType{class}
-%
 \description{
 The \code{timeEvent} class represents events that occur at specific  
 calendar times.  It is useful for one-time events (for example, the Gulf 
